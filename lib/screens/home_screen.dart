@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:open_api_generator_flutter/api.dart';
 import 'package:open_api_generator_flutter/components/text_form_field_decoration.dart';
+import 'package:open_api_generator_flutter/screens/pet_screen.dart';
 import 'package:open_api_generator_flutter/utils/snackbar.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -41,7 +42,10 @@ class _HomeScreenState extends State<HomeScreen> {
         setState(() {
           isProgress = false;
         });
-        showSnackBar(snackBarType: SnackBarType.success, content: 'Success',);
+        showSnackBar(
+          snackBarType: SnackBarType.success,
+          content: 'Success',
+        );
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
@@ -61,8 +65,10 @@ class _HomeScreenState extends State<HomeScreen> {
       setState(() {
         isProgress = false;
       });
-      showSnackBar(snackBarType: SnackBarType.error, content: e.toString(),);
-
+      showSnackBar(
+        snackBarType: SnackBarType.error,
+        content: e.toString(),
+      );
     }
 
     domainController.clear();
@@ -86,6 +92,22 @@ class _HomeScreenState extends State<HomeScreen> {
             fontWeight: FontWeight.w600,
           ),
         ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const PetScreen(),
+                ),
+              );
+            },
+            icon: const Icon(
+              Icons.inventory_2_rounded,
+              color: Colors.white,
+            ),
+          )
+        ],
       ),
       body: Container(
         width: size.width,

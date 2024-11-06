@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:open_api_generator_flutter/screens/home_screen.dart';
+import 'package:open_api_generator_flutter/screens/pet_screen.dart';
 
 final GlobalKey<ScaffoldMessengerState> snackBarKey =
 GlobalKey<ScaffoldMessengerState>();
